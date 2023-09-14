@@ -1,78 +1,88 @@
 public class IMC {
-    private boolean sexo = true;
-    private String result;
-    private double imc;
-    private double altura;
-    private double peso;
+   private boolean sexo=true;
+   private Double altura;
+   private Double peso;
+   private Double valor;
+   private String result;
 
     public boolean isSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
-        this.sexo = sexo;
+    public Double getAltura() {
+        return altura;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public Double getValor() {
+        return valor;
     }
 
     public String getResult() {
         return result;
     }
 
+    public void setSexo(boolean sexo) {
+        this.sexo = sexo;
+    }
+
+    public void setAltura(Double altura) {
+        this.altura = altura;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
     public void setResult(String result) {
         this.result = result;
     }
 
-    public double getImc() {
-        return imc;
-    }
+    public String calcularIMC(){
 
-    public void setImc(double imc) {
-        this.imc = imc;
-    }
+        valor = peso / (altura * altura);
 
-    public double getAltura() {
-        return altura;
-    }
+    if(sexo){
 
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
-        this.peso = peso;
-    }
-
-    public String calcularIMC() {
-        imc = peso / (altura * altura);
-
-        if (sexo) {
-            if (imc < 20.7) {
-                result = "abaixo do peso";
-            } else if (imc < 26.4) {
-                result = "no peso normal";
-            } else if (imc < 27.8) {
-                result = "marginalmente acima do peso";
-            } else if (imc < 31.1) {
-                result = "acima do peso ideal";
-            } else {
-                result = "obeso";
-            }
-        } else {
-            if (imc < 19.1) {
-                result = "abaixo do peso";
-            } else if (imc < 25.8) {
-                result = "no peso normal";
-            } else if (imc < 27.3) {
-                result = "marginalmente acima do peso";
-            } else if (imc < 32.3) {
-                result = "acima do peso ideal";
-            } else {
-                result = "obeso";
-            }
+        if(valor < 20.7){
+            result = "Abaixo do peso Masculino!";
         }
-        return result;
+        else if(valor < 26.4){
+            result = "Peso normal Masculino!";
+        }
+        else if(valor < 27.8){
+            result = "Marginalmente acima do peso Masculino!";
+        }
+        else if(valor < 31.1){
+            result = "Acima do peso ideal Masculino!";
+        }
+        else {
+            result = "Obesidade Masculino!";
+        }
+    }
+    else{
+        if(valor < 19.1){
+            result = "Abaixo do peso Feminino!";
+        }
+        else if(valor < 25.8){
+            result = "Peso normal Feminino!";
+        }
+        else if(valor < 27.3){
+            result = "Marginalmente acima do peso Feminino!";
+        }
+        else if(valor < 32.3){
+            result = "Acima do peso ideal Feminino!";
+        }else{
+            result = "Obesidade Feminino!";
+        }
+    }
+       return result;
     }
 }

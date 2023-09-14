@@ -10,7 +10,7 @@ public class IMCTest {
         pessoa.setPeso(50.0);
         pessoa.setAltura(1.65);
         pessoa.setSexo(true);
-        assertEquals("abaixo do peso", pessoa.calcularIMC());
+        assertEquals("Abaixo do peso Masculino!", pessoa.calcularIMC());
     }
 
     @Test
@@ -19,8 +19,7 @@ public class IMCTest {
         pessoa.setPeso(75.0);
         pessoa.setAltura(1.70);
         pessoa.setSexo(true);
-        assertEquals("no peso normal", pessoa.calcularIMC());
-        
+        assertEquals("Peso normal Masculino!", pessoa.calcularIMC());
     }
 
     @Test
@@ -29,16 +28,16 @@ public class IMCTest {
         pessoa.setPeso(81.0);
         pessoa.setAltura(1.75);
         pessoa.setSexo(true);
-        assertEquals("marginalmente acima do peso", pessoa.calcularIMC());
+        assertEquals("Marginalmente acima do peso Masculino!", pessoa.calcularIMC());
     }
 
     @Test
     void deveRetornarHomemAcimaDoPesoIdeal() {
         IMC pessoa = new IMC();
-        pessoa.setPeso(83);
+        pessoa.setPeso(83.0);
         pessoa.setAltura(1.70);
         pessoa.setSexo(true);
-        assertEquals("acima do peso ideal", pessoa.calcularIMC());
+        assertEquals("Acima do peso ideal Masculino!", pessoa.calcularIMC());
     }
 
     @Test
@@ -47,6 +46,53 @@ public class IMCTest {
         pessoa.setPeso(120.0);
         pessoa.setAltura(1.90);
         pessoa.setSexo(true);
-        assertEquals("obeso", pessoa.calcularIMC());
+        assertEquals("Obesidade Masculino!", pessoa.calcularIMC());
     }
+
+    @Test
+    void deveRetornarMulherAbaixoDoPeso() {
+
+        IMC pessoa = new IMC();
+        pessoa.setPeso(50.0);
+        pessoa.setAltura(1.65);
+        pessoa.setSexo(false);
+        assertEquals("Abaixo do peso Feminino!", pessoa.calcularIMC());
+    }
+
+    @Test
+    void deveRetornarMulherPesoNormal() {
+        IMC pessoa = new IMC();
+        pessoa.setPeso(70.0);
+        pessoa.setAltura(1.70);
+        pessoa.setSexo(false);
+        assertEquals("Peso normal Feminino!", pessoa.calcularIMC());
+    }
+
+    @Test
+    void deveRetornarMulherMarginalmenteAcimaDoPeso() {
+        IMC pessoa = new IMC();
+        pessoa.setPeso(81.0);
+        pessoa.setAltura(1.75);
+        pessoa.setSexo(false);
+        assertEquals("Marginalmente acima do peso Feminino!", pessoa.calcularIMC());
+    }
+
+    @Test
+    void deveRetornarMulherAcimaDoPesoIdeal() {
+        IMC pessoa = new IMC();
+        pessoa.setPeso(83.0);
+        pessoa.setAltura(1.70);
+        pessoa.setSexo(false);
+        assertEquals("Acima do peso ideal Feminino!", pessoa.calcularIMC());
+    }
+
+    @Test
+    void deveRetornarMulherObeso() {
+        IMC pessoa = new IMC();
+        pessoa.setPeso(120.0);
+        pessoa.setAltura(1.90);
+        pessoa.setSexo(false);
+        assertEquals("Obesidade Feminino!", pessoa.calcularIMC());
+    }
+
 }
