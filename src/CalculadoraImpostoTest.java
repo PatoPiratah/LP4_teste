@@ -1,12 +1,11 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class IMCTest {
+public class CalculadoraImpostoTest {
 
     @Test
     void deveRetornarHomemAbaixoDoPeso() {
 
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(50.0);
         pessoa.setAltura(1.65);
         pessoa.setSexo(true);
@@ -15,7 +14,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarHomemPesoNormal() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(75.0);
         pessoa.setAltura(1.70);
         pessoa.setSexo(true);
@@ -24,7 +23,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarHomemMarginalmenteAcimaDoPeso() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(81.0);
         pessoa.setAltura(1.75);
         pessoa.setSexo(true);
@@ -33,7 +32,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarHomemAcimaDoPesoIdeal() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(83.0);
         pessoa.setAltura(1.70);
         pessoa.setSexo(true);
@@ -42,7 +41,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarHomemObeso() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(120.0);
         pessoa.setAltura(1.90);
         pessoa.setSexo(true);
@@ -52,7 +51,7 @@ public class IMCTest {
     @Test
     void deveRetornarMulherAbaixoDoPeso() {
 
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(50.0);
         pessoa.setAltura(1.65);
         pessoa.setSexo(false);
@@ -61,7 +60,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarMulherPesoNormal() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(70.0);
         pessoa.setAltura(1.70);
         pessoa.setSexo(false);
@@ -70,7 +69,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarMulherMarginalmenteAcimaDoPeso() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(81.0);
         pessoa.setAltura(1.75);
         pessoa.setSexo(false);
@@ -79,7 +78,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarMulherAcimaDoPesoIdeal() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(83.0);
         pessoa.setAltura(1.70);
         pessoa.setSexo(false);
@@ -88,7 +87,7 @@ public class IMCTest {
 
     @Test
     void deveRetornarMulherObeso() {
-        IMC pessoa = new IMC();
+        Imposto pessoa = new Imposto();
         pessoa.setPeso(120.0);
         pessoa.setAltura(1.90);
         pessoa.setSexo(false);
