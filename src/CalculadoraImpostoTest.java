@@ -2,18 +2,17 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class CalculadoraImpostoTest {
-
     @Test
-    public void testAcre() {
-        CalculadoraImposto calculadora = new CalculadoraImposto("AC", 1000.00);
-        double imposto = calculadora.calcularImposto();
-        assertEquals(170.00, imposto, 0.01);
+    public void testParaSP() {
+        CalculadoraImposto calculadora = new CalculadoraImposto("SP", 100.0f);
+        float imposto = calculadora.calcularImposto();
+        assertEquals(18.0f, imposto, 0.01f);
     }
 
     @Test
-    public void testAlagoas() {
-        CalculadoraImposto calculadora = new CalculadoraImposto("AL", 1000.00);
-        double imposto = calculadora.calcularImposto();
-        assertEquals(170.00, imposto, 0.01);
+    public void testParaRJ() {
+        CalculadoraImposto calculadora = new CalculadoraImposto("RJ", 150.0f);
+        float imposto = calculadora.calcularImposto();
+        assertEquals(27.0f, imposto, 0.01f);
     }
 }
