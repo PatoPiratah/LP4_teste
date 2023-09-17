@@ -1,12 +1,16 @@
+
 public class CalculadoraImposto {
     private String estado;
     private float valorProduto;
+
 
     public CalculadoraImposto(String estado, float valorProduto) {
         this.estado = estado;
         this.valorProduto = valorProduto;
     }
-
+    public boolean estadoValido(String estado) {
+        return validarEstado(estado);
+    }
     public String getEstado() {
         return estado;
     }
@@ -95,7 +99,7 @@ public class CalculadoraImposto {
     private boolean validarEstado(String estado) {
         String[] estadosValidos = {
                 "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS",
-                "MG", "PA", "PB", "PR", "PE", "PI", "RN", "RS", "RJ", "RO", "RR", "SC", "SE", "TO"
+                "MG", "PA", "PB", "PR", "PE", "PI", "RN", "RS", "RJ", "RO", "RR", "SC", "SE", "TO", "SP"
         };
 
         for (String estadoValido : estadosValidos) {
